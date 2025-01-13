@@ -1,11 +1,41 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
 
+import Layout from '../layouts/Layout.astro';
+import Badge from '../components/Badge.astro';
+import LinkedIn from '../components/icons/LinkedIn.astro';
+import Socials from '../components/Socials.astro';
+import Github from '../components/icons/Github.astro';
+import Mail from '../components/icons/Mail.astro';
+import Experience from '../components/Experience.astro';
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Porfolio de Diego Bances - Desarollador y Programador Web" 
+description="Conoce más sobre Diego Bances, Desarrollador Web Full Stack de Guatemala. Especializado en crear aplicaciones únicas y personalizadas para cada cliente">
+	<main>
+		<section class="w-full lg:w-[740px] mx-auto py-44">
+			<img class="rounded-full size-12 mb-4" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="mifoto" class="w-24 h-24" />
+			<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10">Hey, soy Diego Bances
+				<a href="https://www.linkedin.com/in/diegobances/" target="_blank" rel="noopener" class="flex justify-center items-center">
+					<Badge>Disponible para trabajar</Badge> 
+				</a>
+			</h1>
+			<h2 class="text-2xl opacity-80 text-wrap"><span class="text-yellow-200/90"> Desarrollador Web Full Stack  </span> De Guatemala. Especializado en crear aplicaciones únicas y personalizadas para cada cliente</h2>
+			<nav class="flex gap-x-4 mt-8" >
+					<Socials href="https://www.linkedin.com/in/diegobances/">
+						<LinkedIn class="size-6" /> LinkedIn </a>
+					</Socials>
+					<Socials href="https://github.com/BancesDiego27">
+						<Github class="size-6" /> GitHub </a>
+					</Socials>
+					<Socials href="mailto:dbances009@gmail.com">
+						<Mail class="size-6" /> Contactame </a>
+					</Socials>
+			</nav>
+		</section>
+		<section>
+				<Experience />
+		</section>
+	</main>
 </Layout>
