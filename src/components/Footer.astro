@@ -1,0 +1,34 @@
+---
+const currentYear = new Date().getFullYear();
+
+---
+
+<footer class="bg-[#1A1A1A] text-white py-12">
+  <div class="max-w-[1120px] mx-auto px-4">
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="space-y-4">
+        <h3 class="text-xl font-bold text-[#C5A467]">Diego Bances</h3>
+        <p class="text-gray-400 text-sm">
+          Desarrollador Web Junior apasionado por crear experiencias digitales únicas y funcionales.
+        </p>
+      </div>
+      
+      <div class="space-y-4">
+        <h3 class="text-xl font-bold text-[#C5A467]">Enlaces Rápidos</h3>
+        <nav>
+          <ul class="space-y-2">
+            <li><a href="#top" class="text-gray-400 hover:text-white transition-colors">Inicio</a></li>
+            <li><a href="#experiencia" class="text-gray-400 hover:text-white transition-colors">Experiencia</a></li>
+            <li><a href="#proyectos" class="text-gray-400 hover:text-white transition-colors">Proyectos</a></li>
+            <li><a href="#sobre-mi" class="text-gray-400 hover:text-white transition-colors">Sobre Mí</a></li>
+          </ul>
+        </nav>
+      </div>
+      
+    </div>
+    
+    <div class="mt-8 pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-gray-400 text-sm">&copy; {currentYear} Diego Bances. Casi todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>

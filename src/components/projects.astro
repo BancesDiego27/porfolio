@@ -1,0 +1,109 @@
+---
+import Github from "./icons/Github.astro";
+
+
+const PROJECTS = [
+    {
+      name: "Sistema de Inventario y Automatización de Correos",
+      description: 
+        "Sistema de gestión de inventarios con automatización del envío de recibos por correo tras cada compra y generación de reportes personalizados. Implementado con Angular para el frontend, Node.js (Express) para el backend, y MySQL como base de datos. Desplegado en Render.",
+      link: "https://example.com/inventory-system", // Cambia esto si tienes un enlace real.
+
+      image: "https://placehold.co/300x200", // Sustituye con una imagen del proyecto.
+      tags: ["Angular", "Node.js", "Express", "MySQL", "Render", "Automatización"],
+    },
+  {
+    name: "LeagueBooker",
+    description: 
+      "Una plataforma para la gestión de torneos de fútbol que incluye autenticación de usuarios, gestión de roles (jugadores, entrenadores, árbitros), creación de partidos y torneos, y transmisión de partidos mediante streaming. Mi contribución fue diseñar todas las APIs necesarias para el sistema y conectar el frontend con el backend.",
+    link: "https://youtu.be/UvI98i8Ajag", 
+    image: "https://placehold.co/300x200", // Sustituye con una imagen del proyecto.
+    tags: ["Angular", "Node.js","Express", "MySQL", "Streaming", "Analisis de IA"],
+  },
+];
+
+---
+
+<section class="w-full max-w-[1120px] mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 py-12">
+        {
+            PROJECTS.map((project) => (
+                <article class="group bg-[#1A1A1A] rounded-xl overflow-hidden transition-all duration-500 hover:scale-[1.02]">
+                    <div class="relative">
+                        <img 
+                            src={project.image} 
+                            alt={project.name}
+                            class="w-full h-48 object-cover"
+                            loading="lazy"
+                        />
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+                            <a 
+                                href={project.link} 
+                                target="_blank" 
+                                rel="noopener"
+                                class="bg-white/20 p-2 rounded-full hover:bg-white/30 transition-colors"
+                            >
+                                <svg 
+                                    xmlns="http://www.w3.org/2000/svg" 
+                                    width="24" 
+                                    height="24" 
+                                    viewBox="0 0 24 24" 
+                                    fill="none" 
+                                    stroke="currentColor" 
+                                    stroke-width="2" 
+                                    stroke-linecap="round" 
+                                    stroke-linejoin="round" 
+                                    class="text-white"
+                                >
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                    <polyline points="15 3 21 3 21 9"/>
+                                    <line x1="10" y1="14" x2="21" y2="3"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-2">
+                            {project.name}
+                        </h3>
+                        <p class="text-gray-400 mb-4">
+                            {project.description}
+                        </p>
+                        <ul class="flex flex-wrap gap-2">
+                            {project.tags.map((tag) => (
+                                <li class="bg-[#C5A467]/10 text-[#C5A467] px-3 py-1 text-sm rounded-full">
+                                    {tag}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </article>
+            ))
+        }
+    </div>
+</section>
+
+<style>
+    section {
+        view-timeline-name: --section;
+        view-timeline-axis: block;
+    }
+
+    article {
+        animation-timeline: --section;
+        animation-name: show;
+        animation-range: entry 20% cover 30%;
+        animation-fill-mode: both;
+    }
+
+    @keyframes show {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>

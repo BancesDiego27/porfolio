@@ -1,0 +1,118 @@
+---
+const PERSONAL_INFO = {
+    title: "Sobre mí",
+    description: "Desarrollador Web Junior de Guatemala, apasionado por crear soluciones digitales innovadoras. Constantemente aprendiendo y mejorando mis habilidades para ofrecer lo mejor en cada proyecto.",
+    image: "/tu-foto.jpg", // Asegúrate de tener una foto tuya en esta ruta
+    details: [
+        {
+            title: "Proyectos Personales",
+            value: "5+"
+        },
+        {
+            title: "Cursos Completados",
+            value: "10+"
+        },
+        {
+            title: "Tecnologías",
+            value: "8+"
+        }
+    ],
+    skills: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React",
+        "Astro",
+        "TailwindCSS",
+        "Git",
+        "Responsive Design"
+    ],
+    interests: [
+        "Desarrollo Web",
+        "UX/UI",
+        "Nuevas Tecnologías",
+        "Aprendizaje Continuo"
+    ]
+}
+---
+
+<section class="w-full max-w-[1120px] mx-auto px-4 py-24">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1">
+            <h2 class="text-4xl font-bold text-white mb-6">{PERSONAL_INFO.title}</h2>
+            
+            <p class="text-gray-400 mb-8 text-pretty">
+                {PERSONAL_INFO.description}
+            </p>
+
+            <div class="grid grid-cols-3 gap-4 mb-12">
+                {PERSONAL_INFO.details.map(detail => (
+                    <div class="text-center">
+                        <span class="block text-[#C5A467] text-2xl font-bold mb-1">{detail.value}</span>
+                        <span class="text-gray-400 text-sm">{detail.title}</span>
+                    </div>
+                ))}
+            </div>
+
+            <div class="mb-8">
+                <h3 class="text-white text-xl font-semibold mb-4">Habilidades</h3>
+                <ul class="flex flex-wrap gap-2">
+                    {PERSONAL_INFO.skills.map(skill => (
+                        <li class="bg-[#1A1A1A] text-white px-4 py-2 rounded-full text-sm border border-[#C5A467]/20 hover:border-[#C5A467] transition-colors">
+                            {skill}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-white text-xl font-semibold mb-4">Intereses</h3>
+                <ul class="flex flex-wrap gap-2">
+                    {PERSONAL_INFO.interests.map(interest => (
+                        <li class="bg-[#1A1A1A] text-[#C5A467] px-4 py-2 rounded-full text-sm border border-[#C5A467]/20 hover:bg-[#C5A467]/10 transition-colors">
+                            {interest}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </div>
+
+        <div class="order-1 md:order-2">
+            <div class="relative">
+                <div class="absolute -inset-4 bg-[#C5A467]/20 rounded-lg blur-md"></div>
+                <img
+                    src={PERSONAL_INFO.image}
+                    alt="Foto de perfil"
+                    width="600"
+                    height="600"
+                    class="relative w-full aspect-square object-cover rounded-lg"
+                />
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    section {
+        view-timeline-name: --section;
+        view-timeline-axis: block;
+    }
+
+    div {
+        animation-timeline: --section;
+        animation-name: show;
+        animation-range: entry 20% cover 30%;
+        animation-fill-mode: both;
+    }
+
+    @keyframes show {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
