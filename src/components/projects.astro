@@ -1,5 +1,5 @@
 ---
-import Github from "./icons/Github.astro";
+
 
 
 const PROJECTS = [
@@ -7,9 +7,7 @@ const PROJECTS = [
       name: "Sistema de Inventario y Automatización de Correos",
       description: 
         "Sistema de gestión de inventarios con automatización del envío de recibos por correo tras cada compra y generación de reportes personalizados. Implementado con Angular para el frontend, Node.js (Express) para el backend, y MySQL como base de datos. Desplegado en Render.",
-      link: "https://example.com/inventory-system", // Cambia esto si tienes un enlace real.
-
-      image: "https://placehold.co/300x200", // Sustituye con una imagen del proyecto.
+      image: "/astci.webp", // Sustituye con una imagen del proyecto.
       tags: ["Angular", "Node.js", "Express", "MySQL", "Render", "Automatización"],
     },
   {
@@ -17,7 +15,7 @@ const PROJECTS = [
     description: 
       "Una plataforma para la gestión de torneos de fútbol que incluye autenticación de usuarios, gestión de roles (jugadores, entrenadores, árbitros), creación de partidos y torneos, y transmisión de partidos mediante streaming. Mi contribución fue diseñar todas las APIs necesarias para el sistema y conectar el frontend con el backend.",
     link: "https://youtu.be/UvI98i8Ajag", 
-    image: "https://placehold.co/300x200", // Sustituye con una imagen del proyecto.
+    image: "/leaguebooker.webp", // Sustituye con una imagen del proyecto.
     tags: ["Angular", "Node.js","Express", "MySQL", "Streaming", "Analisis de IA"],
   },
 ];
@@ -36,7 +34,9 @@ const PROJECTS = [
                             class="w-full h-48 object-cover"
                             loading="lazy"
                         />
-                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+                            {
+                                project.link && (
+                                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
                             <a 
                                 href={project.link} 
                                 target="_blank" 
@@ -61,6 +61,8 @@ const PROJECTS = [
                                 </svg>
                             </a>
                         </div>
+                                )
+                            }
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-semibold text-white mb-2">
